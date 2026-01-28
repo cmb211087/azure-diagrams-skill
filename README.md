@@ -12,13 +12,13 @@ A comprehensive technical diagramming toolkit for **solutions architects**, **pr
 
 | Diagram Type | Use Case | Example Prompt |
 |--------------|----------|----------------|
-| ** Azure Architecture** | Solution designs, infrastructure docs | "Design a microservices architecture with AKS, Cosmos DB, and Service Bus" |
-| ** Business Process Flows** | Workflows, approvals, swimlanes | "Create a swimlane diagram for the invoice approval process" |
-| ** Entity Relationship (ERD)** | Database schemas, data models | "Generate an ERD for customer, order, and product entities" |
-| ** Timeline / Gantt** | Project roadmaps, migration plans | "Create a 6-month cloud migration timeline with 4 phases" |
-| ** UI Wireframes** | Dashboard mockups, screen layouts | "Design a KPI dashboard with charts, metrics, and data table" |
-| ** Sequence Diagrams** | Auth flows, API interactions | "Show the OAuth 2.0 authorization code flow" |
-| ** Network Topology** | Hub-spoke, VNets, hybrid cloud | "Create a hub-spoke network with shared services and 3 workloads" |
+| **Azure Architecture** | Solution designs, infrastructure docs | "Design a microservices architecture with AKS, Cosmos DB, and Service Bus" |
+| **Business Process Flows** | Workflows, approvals, swimlanes | "Create a swimlane diagram for the invoice approval process" |
+| **Entity Relationship (ERD)** | Database schemas, data models | "Generate an ERD for customer, order, and product entities" |
+| **Timeline / Gantt** | Project roadmaps, migration plans | "Create a 6-month cloud migration timeline with 4 phases" |
+| **UI Wireframes** | Dashboard mockups, screen layouts | "Design a KPI dashboard with charts, metrics, and data table" |
+| **Sequence Diagrams** | Auth flows, API interactions | "Show the OAuth 2.0 authorization code flow" |
+| **Network Topology** | Hub-spoke, VNets, hybrid cloud | "Create a hub-spoke network with shared services and 3 workloads" |
 
 ##  Built For
 
