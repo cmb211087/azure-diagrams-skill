@@ -66,7 +66,7 @@ cp -r .github/skills/azure-diagrams YOUR_REPO/.github/skills/
 
 Install directly from GitHub:
 ```bash
-claude install github:YOUR_USERNAME/azure-diagrams-skill
+claude install github:cmb211087/azure-diagrams-skill
 ```
 
 Or install from a local folder:
