@@ -31,18 +31,31 @@ apt-get install graphviz  # or: brew install graphviz (macOS) / choco install gr
 azure-diagrams/
 ├── SKILL.md                              # Main skill instructions
 ├── references/
-│   ├── azure-components.md               # 700+ Azure components
-│   ├── common-patterns.md                # Architecture patterns
+│   ├── azure-components.md               # 700+ Azure components + Nov 2025 icons
+│   ├── common-patterns.md                # Architecture patterns (SVG default)
 │   ├── business-process-flows.md         # Workflow & swimlane patterns
 │   ├── entity-relationship-diagrams.md   # ERD patterns
 │   ├── timeline-gantt-diagrams.md        # Timeline patterns
 │   ├── ui-wireframe-diagrams.md          # Wireframe patterns
 │   ├── iac-to-diagram.md                 # Generate from Bicep/Terraform
+│   ├── large-diagram-strategies.md       # Handling 50+ node diagrams
 │   ├── preventing-overlaps.md            # Layout troubleshooting
-│   └── quick-reference.md                # Copy-paste snippets
+│   └── quick-reference.md                # Snippets + WAF patterns
 └── scripts/
-    ├── generate_diagram.py               # Interactive generator
+    ├── generate_diagram.py               # Secure interactive generator
     └── verify_installation.py            # Check prerequisites
+```
+
+## Output Format
+
+**SVG is recommended** for all diagrams:
+- Scalable without quality loss
+- 50-80% smaller file size than PNG
+- Web-ready, embeds in HTML/Markdown
+- Text content is searchable
+
+```python
+with Diagram("Title", outformat="svg", ...):
 ```
 
 ## Example Prompts
@@ -69,6 +82,21 @@ Show the process from offer acceptance to first day completion
 Generate an entity relationship diagram for an order management system with:
 - Customers, Orders, OrderItems, Products, Categories
 - Show primary keys, foreign keys, and cardinality
+```
+
+**Well-Architected Pattern:**
+```
+Create a Zero Trust security architecture showing:
+- Entra ID with Conditional Access
+- Network micro-segmentation with Firewall
+- Private Endpoints for data services
+- Key Vault with Managed Identity access
+```
+
+**Large Architecture (Split Views):**
+```
+Create a network view diagram for our 80-resource Azure environment,
+focusing only on VNets, subnets, NSGs, and connectivity
 ```
 
 ## Compatibility

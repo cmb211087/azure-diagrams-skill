@@ -242,7 +242,7 @@ with Diagram(
     show=False,                    # Don't auto-open
     filename="output",             # Output filename (no extension)
     direction="TB",                # TB, BT, LR, RL
-    outformat="png",               # png, jpg, svg, pdf
+    outformat="svg",               # svg (recommended), png, jpg, pdf
     graph_attr={
         "splines": "spline",       # Curved edges
         "nodesep": "1.0",          # Horizontal spacing
