@@ -28,11 +28,11 @@ A comprehensive technical diagramming toolkit for **solutions architects**, **pr
 
 | Format | Use Case | Example |
 |--------|----------|---------|
-| **SVG (Recommended)** | Web docs, scalable, smaller files | `outformat="svg"` |
-| PNG | Presentations, email | `outformat="png"` |
+| **PNG (Recommended for sharing)** | GitHub, email, presentations | `outformat="png"` |
+| SVG | Local docs, web embedding | `outformat="svg"` |
 | Both | Maximum flexibility | `outformat=["svg", "png"]` |
 
-SVG is recommended because it's scalable, web-ready, searchable, and typically 50-80% smaller than PNG.
+> **Note:** SVG output from the `diagrams` library references external icon files via absolute paths. For sharing diagrams (GitHub, email), use PNG format. SVG works best for local documentation where the icon files are accessible.
 
 ##  Built For
 
@@ -229,17 +229,12 @@ Built on the [Agent Skills](https://agentskills.io) open standard.
 | <img src="examples/microservices.png" width="250"> | <img src="examples/serverless.png" width="250"> | <img src="examples/from-terraform.png" width="250"> |
 | AKS + Services | Event-Driven | IaC Generated |
 
-### Well-Architected Framework & SVG Examples
+### Well-Architected Framework Examples
 
 | WAF Reliability | WAF Security | Large Diagram Strategy |
 |-----------------|--------------|------------------------|
-| <img src="examples/waf-reliability.svg" width="250"> | <img src="examples/waf-security.svg" width="250"> | <img src="examples/large-diagram-split.svg" width="250"> |
+| <img src="examples/waf-reliability.png" width="250"> | <img src="examples/waf-security.png" width="250"> | <img src="examples/large-diagram-split.png" width="250"> |
 | Multi-Region Failover | Zero Trust Architecture | Split Views Index |
-
-| SVG Output Showcase |
-|---------------------|
-| <img src="examples/svg-output.svg" width="400"> |
-| E-Commerce Platform (SVG format - scalable, web-ready) |
 
 ##  Security
 

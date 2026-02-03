@@ -165,11 +165,11 @@ component >> Edge(style="dotted") >> app_insights
 ## Output Formats
 
 ```python
-# SVG (recommended - scalable, web-friendly, smaller file size)
-filename="arch", outformat="svg"
-
-# PNG (for presentations and email)
+# PNG (recommended for sharing - GitHub, email, presentations)
 filename="arch", outformat="png"
+
+# SVG (for local documentation)
+filename="arch", outformat="svg"
 
 # PDF (for print documents)
 filename="arch", outformat="pdf"
@@ -178,12 +178,19 @@ filename="arch", outformat="pdf"
 filename="arch", outformat=["svg", "png"]
 ```
 
-### SVG Benefits
-- **Scalable**: No quality loss at any zoom level
-- **Smaller files**: Typically 50-80% smaller than PNG
-- **Web-ready**: Embeds directly in HTML/Markdown
-- **Text searchable**: Content is indexable
-- **Future-proof**: Ready for interactivity features
+### Format Recommendations
+
+| Format | Best For | Limitation |
+|--------|----------|------------|
+| **PNG** | GitHub, email, sharing | Larger file size |
+| **SVG** | Local docs, web embedding | External icon references* |
+| **PDF** | Print documents | Not web-friendly |
+
+> **Important:** SVG files from the `diagrams` library reference external PNG icon files via absolute local paths (e.g., `C:\Python313\...\icon.png`). This means:
+> - SVGs render correctly on your local machine
+> - SVGs will show broken images when shared (GitHub, email, other machines)
+> - **Use PNG format when sharing diagrams**
+> - SVG is ideal for local documentation or when post-processing to embed images
 
 ## Preventing Overlaps (Complex Diagrams)
 
