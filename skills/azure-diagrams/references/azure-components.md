@@ -487,6 +487,113 @@ from diagrams.azure.intune import (
 
 ---
 
+## New Icons (November 2025)
+
+Recent additions to Azure's icon library. Check the `diagrams` library version for availability.
+
+### AKS Network Policy
+
+Container networking control for Kubernetes:
+
+```python
+# If available in diagrams library
+from diagrams.azure.compute import AKS
+from diagrams.azure.network import NetworkSecurityGroupsClassic
+
+# Workaround using existing icons
+aks = AKS("AKS + Network Policy")
+nsg = NetworkSecurityGroupsClassic("Network Policy")
+```
+
+### Azure Local (formerly Azure Stack HCI)
+
+Hybrid infrastructure for edge and datacenter:
+
+```python
+from diagrams.azure.azurestack import Capacity
+from diagrams.custom import Custom
+
+# Using Azure Stack icon as fallback
+azure_local = Capacity("Azure Local")
+
+# Or use custom icon if you have the SVG
+# azure_local = Custom("Azure Local", "./icons/azure-local.svg")
+```
+
+### Azure Linux
+
+Microsoft's Linux distribution for containers:
+
+```python
+from diagrams.azure.compute import VMLinux, AKS
+
+# AKS nodes running Azure Linux
+aks_linux = AKS("AKS\n(Azure Linux)")
+
+# VM with Azure Linux
+vm_linux = VMLinux("Azure Linux VM")
+```
+
+### Azure Web PubSub
+
+Real-time messaging service for WebSocket applications:
+
+```python
+from diagrams.azure.web import Signalr
+from diagrams.custom import Custom
+
+# Signalr is the closest existing icon
+pubsub = Signalr("Web PubSub")
+
+# Or use custom icon
+# pubsub = Custom("Web PubSub", "./icons/web-pubsub.svg")
+```
+
+### Custom Icon Fallback Pattern
+
+For icons not yet in the `diagrams` library:
+
+```python
+from diagrams import Diagram, Cluster
+from diagrams.custom import Custom
+
+# Download official icons from:
+# https://learn.microsoft.com/en-us/azure/architecture/icons/
+
+with Diagram("Custom Icons Example", show=False, outformat="svg"):
+    # Use custom SVG files
+    azure_local = Custom("Azure Local", "./icons/azure-local.svg")
+    web_pubsub = Custom("Web PubSub", "./icons/web-pubsub.svg")
+
+    azure_local >> web_pubsub
+```
+
+### Icon Sources
+
+| Source | URL | Notes |
+|--------|-----|-------|
+| **Official Microsoft** | https://learn.microsoft.com/en-us/azure/architecture/icons/ | Authoritative, regularly updated |
+| **Azure Icons Collection** | https://github.com/benc-uk/icon-collection | Community curated, 705+ icons |
+| **az-icons.com** | https://az-icons.com/ | Searchable, downloadable |
+| **Diagrams Library** | https://diagrams.mingrammer.com/docs/nodes/azure | Built-in icons |
+
+### Checking Icon Availability
+
+```python
+# List all available Azure icons in your installed version
+import diagrams.azure as azure
+import pkgutil
+
+for importer, modname, ispkg in pkgutil.iter_modules(azure.__path__):
+    print(f"diagrams.azure.{modname}")
+    module = __import__(f"diagrams.azure.{modname}", fromlist=[modname])
+    for attr in dir(module):
+        if not attr.startswith('_'):
+            print(f"  - {attr}")
+```
+
+---
+
 ## Finding the Right Component
 
 ### By Service Name

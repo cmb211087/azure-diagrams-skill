@@ -12,7 +12,7 @@ from diagrams.azure.database import SQLDatabases, CacheForRedis
 from diagrams.azure.storage import BlobStorage
 from diagrams.azure.security import KeyVaults
 
-with Diagram("Web Application", show=False, direction="TB"):
+with Diagram("Web Application", show=False, direction="TB", outformat="svg"):
     cdn = CDNProfiles("CDN")
     
     with Cluster("Frontend"):
@@ -46,7 +46,7 @@ from diagrams.azure.integration import ServiceBus
 from diagrams.azure.security import KeyVaults
 from diagrams.azure.monitor import ApplicationInsights
 
-with Diagram("Microservices Architecture", show=False, direction="LR"):
+with Diagram("Microservices Architecture", show=False, direction="LR", outformat="svg"):
     with Cluster("Ingress"):
         gateway = ApplicationGateway("App Gateway")
     
@@ -80,7 +80,7 @@ from diagrams.azure.integration import EventGridTopics, ServiceBus, LogicApps
 from diagrams.azure.storage import BlobStorage, QueuesStorage
 from diagrams.azure.database import CosmosDb
 
-with Diagram("Serverless Event-Driven", show=False, direction="LR"):
+with Diagram("Serverless Event-Driven", show=False, direction="LR", outformat="svg"):
     with Cluster("Event Sources"):
         blob = BlobStorage("Blob Trigger")
         queue = QueuesStorage("Queue Trigger")
@@ -109,7 +109,7 @@ from diagrams.azure.storage import DataLakeStorage, BlobStorage
 from diagrams.azure.database import SQLDatabases
 from diagrams.azure.ml import MachineLearningServiceWorkspaces
 
-with Diagram("Data Platform", show=False, direction="LR"):
+with Diagram("Data Platform", show=False, direction="LR", outformat="svg"):
     with Cluster("Sources"):
         blob = BlobStorage("Raw Data")
         events = EventHubs("Streaming")
@@ -140,7 +140,7 @@ from diagrams.azure.network import VirtualNetworks, Firewall, VirtualNetworkGate
 from diagrams.azure.compute import VM
 from diagrams.azure.database import SQLDatabases
 
-with Diagram("Hub-Spoke Network", show=False, direction="TB"):
+with Diagram("Hub-Spoke Network", show=False, direction="TB", outformat="svg"):
     with Cluster("Hub VNet"):
         firewall = Firewall("Azure Firewall")
         bastion = Bastions("Bastion")
@@ -170,7 +170,7 @@ from diagrams.azure.database import CosmosDb
 from diagrams.azure.security import KeyVaults
 from diagrams.azure.identity import ActiveDirectory
 
-with Diagram("API-First Architecture", show=False, direction="TB"):
+with Diagram("API-First Architecture", show=False, direction="TB", outformat="svg"):
     users = ActiveDirectory("Entra ID")
     
     with Cluster("API Layer"):
@@ -204,7 +204,7 @@ from diagrams.azure.storage import BlobStorage
 from diagrams.azure.compute import FunctionApps
 from diagrams.azure.database import CosmosDb
 
-with Diagram("IoT Architecture", show=False, direction="LR"):
+with Diagram("IoT Architecture", show=False, direction="LR", outformat="svg"):
     with Cluster("Edge"):
         edge = IotEdge("IoT Edge")
     
@@ -234,7 +234,7 @@ from diagrams.azure.compute import AKS, ACR
 from diagrams.azure.security import KeyVaults
 from diagrams.azure.monitor import ApplicationInsights
 
-with Diagram("DevOps Pipeline", show=False, direction="LR"):
+with Diagram("DevOps Pipeline", show=False, direction="LR", outformat="svg"):
     with Cluster("Source Control"):
         repos = Repos("Azure Repos")
     
@@ -268,7 +268,7 @@ from diagrams.azure.compute import AppServices
 from diagrams.azure.database import CosmosDb, SQLDatabases
 from diagrams.azure.storage import BlobStorage
 
-with Diagram("Multi-Region HA", show=False, direction="TB"):
+with Diagram("Multi-Region HA", show=False, direction="TB", outformat="svg"):
     frontdoor = FrontDoors("Front Door")
     
     with Cluster("Region 1 - Primary"):
@@ -299,7 +299,7 @@ from diagrams.azure.security import KeyVaults, Sentinel, Defender
 from diagrams.azure.compute import AppServices
 from diagrams.azure.database import SQLDatabases
 
-with Diagram("Zero Trust Architecture", show=False, direction="TB"):
+with Diagram("Zero Trust Architecture", show=False, direction="TB", outformat="svg"):
     with Cluster("Identity"):
         aad = ActiveDirectory("Entra ID")
         ca = ConditionalAccess("Conditional Access")
@@ -337,7 +337,7 @@ from diagrams.azure.storage import BlobStorage
 from diagrams.azure.database import CosmosDb
 from diagrams.azure.integration import APIManagement
 
-with Diagram("AI/ML Architecture", show=False, direction="LR"):
+with Diagram("AI/ML Architecture", show=False, direction="LR", outformat="svg"):
     with Cluster("Data"):
         blob = BlobStorage("Training Data")
         cosmos = CosmosDb("Feature Store")
@@ -369,7 +369,7 @@ from diagrams.azure.integration import ServiceBus
 from diagrams.onprem.database import MSSQL
 from diagrams.onprem.compute import Server
 
-with Diagram("Hybrid Cloud", show=False, direction="LR"):
+with Diagram("Hybrid Cloud", show=False, direction="LR", outformat="svg"):
     with Cluster("On-Premises"):
         onprem_server = Server("App Server")
         onprem_db = MSSQL("SQL Server")

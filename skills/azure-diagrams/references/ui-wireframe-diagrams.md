@@ -6,6 +6,16 @@ Generate professional UI wireframe mockups showing screen layouts and components
 
 Generate HTML wireframes and convert to PNG using a headless browser.
 
+> **Security Note:** The `subprocess` import below is blocked when running code through
+> the sandboxed diagram generator (`generate_diagram.py`). To use HTML-to-PNG conversion:
+>
+> 1. **Run as standalone script** - Save the code to a `.py` file and execute directly
+> 2. **Use cairosvg instead** - See "Approach 2: SVG Wireframes" below for a safer alternative
+> 3. **Generate HTML only** - Skip PNG conversion, use HTML directly in documentation
+>
+> The sandboxed execution blocks `subprocess`, `os`, and other system-access modules
+> to prevent arbitrary code execution.
+
 ```python
 import subprocess
 from pathlib import Path
